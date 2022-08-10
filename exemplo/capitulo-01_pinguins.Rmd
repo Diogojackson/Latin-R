@@ -2,17 +2,21 @@
 title: 'Automatizar partes chatas do manuscrito para poder focar na escrita: um exercício
   usando dados de pinguins'
 author:
-- Andrea Sánchez-Tapia ^*1*^, Sara R. Mortara^*1*^
-- ^*1*^ ¡liibre! laboratório independente de informática da biodiversidade e reprodutibilidade em ecologia
+- "Andrea Sánchez-Tapia ^*1*^, Sara R. Mortara^*1*^"
+- ^*1*^ ¡liibre! laboratório independente de informática da biodiversidade e reprodutibilidade
+  em ecologia
 date: "LatinR, 2020"
 output:
+  pdf_document: default
   html_document:
     df_print: paged
-csl: ../citation/journal-of-ecology.csl
+  word_document:
+    reference_docx: ./templates/template_word2.docx
+csl: "../citation/journal-of-ecology.csl"
 always_allow_html: yes
 bibliography: ../citation/referencias.bib
 abstract: |
-  Valerá sim a pena continuar a ler o manuscrito.
+  **Resumo:** Valerá sim a pena continuar a ler o manuscrito. Escrever não é fácil e ninguém quer perder tempo inserindo tabelas e figuras em editores de texto convencionais. Por isso, o uso de ferramentas que permitem a automatização em arquivos de texto como latex e rmarkdown é essencial. A curva de aprendizado não é tão rápida quanto em um editor de texto convencional, mas acredite, valerá a pena. Para a redação não há outra saída. Você irá precisar de café (ou sua outra bebida favorita), uma boa pergunta embasada no contexto teórico da sua área de estudo, dados e um bons argumentos para discutir o que você encontrou. Mas esta não é uma oficina sobre redação científica. Por isso, o uso de ferramentas que permitem a automatização em arquivos de texto como latex e rmarkdown é essencial. A curva de aprendizado não é tão rápida quanto em um editor de texto convencional, mas acredite, valerá a pena. Para a redação não há outra saída.
 ---
 
 ```{r setup, include=FALSE}
@@ -24,17 +28,16 @@ tabela <- read.csv("../output/tabela_01.csv")
 
 ## Introdução
 
-Escrever não é fácil e ninguém quer perder tempo inserindo tabelas e figuras em editores de texto convencionais. Por isso, o uso de ferramentas que permitem a automatização em arquivos de texto como latex e rmarkdown é essencial. A curva de aprendizado não é tão rápida quanto em um editor de texto convencional, mas acredite, valerá a pena. 
-
-O objetivo desse trabalho é apenas mostrar como fazer um manuscrito usando rmarkdown. Os pinguins estão aqui porque eles são legais e podem ser diferentes dependendo da espécie e do sexo [@gorman_ecological_2014]. Importante lembrar que os dados não falam por si só e precisam de contexto [@dignazio_data_2020]. 
-
-
+Escrever não é fácil e ninguém quer perder tempo inserindo tabelas e figuras em editores de texto convencionais. Por isso, o uso de ferramentas que permitem a automatização em arquivos de texto como latex e rmarkdown é essencial. A curva de aprendizado não é tão rápida quanto em um editor de texto convencional, mas acredite, valerá a pena.        
+    
+Não faz sentido esse paragrafo não recuar igual aos outros, ta foda essa porra, será que consigo ajeitar?       
+    
 ## Material e Métodos
 
-Para a redação não há outra saída. Você irá precisar de café (ou sua outra bebida favorita), uma boa pergunta embasada no contexto teórico da sua área de estudo, dados e um bons argumentos para discutir o que você encontrou. Mas esta não é uma oficina sobre redação científica. 
+Para a redação não há outra saída. Você irá precisar de café (ou sua outra bebida favorita), uma boa pergunta embasada no contexto teórico da sua área de estudo, dados e um bons argumentos para discutir o que você encontrou. Mas esta não é uma oficina sobre redação científica.       
 
 Neste exercício, usaremos dados abertos coletados por @gorman_ecological_2014 disponíveis no pacote de R palmerpenguins [@allisonmhorst_allisonhorst_2020] para mostrar como inserir tabelas e figuras em um documento de rmarkdown.
-
+    
 Os dados são referentes a medidas de `r nrow(dados)` indivíduos de três espécies de pinguins do gênero *Pygoscelis*. As espécies ocorrem em três ilhas do arquipélago Palmer na Antártica: `r paste(unique(dados$island), collapse = ", ")`. A espécie *P. adelie* é a única que ocorre nas três ilhas e co-ocorre com as demais espécies (Figura 1). 
 
 ```{r mapa, fig.cap = "Figura 1. Localização das três espécies de pinguins nas três ilhas do arquipélago Palmer porque um mapa pode fazer parecer mais profissional. Imagens dos pinguins por Allison Horst."}
@@ -44,14 +47,14 @@ knitr::include_graphics("../figs/figura_01.png")
 
 ## Resultados
 
-Uma variável que mostra a diferença entre os sexos é a massa corpórea (Figura 2). 
+Uma variável que mostra a diferença entre os sexos é a massa corpórea (Figura 2).         
 
 ```{r boxplot, fig.cap = "Figura 2. Variação da massa corpórea entre machos e fêmeas das três espécies."}
 knitr::include_graphics("../figs/figura_02.png")
 
 ```
 
-Veja que interessante essa tabela (Tabela 1). Notem que colocamos o nome das espécies em itálico usando a notação adicionando asterisco no início e fim dos nomes. 
+Veja que interessante essa tabela (Tabela 1). Notem que colocamos o nome das espécies em itálico usando a notação adicionando asterisco no início e fim dos nomes.        
 
 ```{r tabela}
 tabela$sp <- paste0('*', tabela$sp, '*')
@@ -65,7 +68,7 @@ knitr::kable(tabela, caption = "Tabela 1. Média e desvio padrão das medidas do
 
 ## Discussão
 
-Os pinguins são bonitinhos e parecem apresentar diferença entre os sexos. Não aprendemos muito mais sobre os pinguins porque os dados não significam quase nada sem contexto. Esperamos que vocês tenham perdido o medo e se convencido de que é preciso automatizar as partes chatas do manuscrito e focar naquilo que importa: a escrita em si.
+Os pinguins são bonitinhos e parecem apresentar diferença entre os sexos. Não aprendemos muito mais sobre os pinguins porque os dados não significam quase nada sem contexto. Esperamos que vocês tenham perdido o medo e se convencido de que é preciso automatizar as partes chatas do manuscrito e focar naquilo que importa: a escrita em si.       
 
 ## Referências
 <div id="refs"></div>

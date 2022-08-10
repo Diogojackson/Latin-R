@@ -6,10 +6,10 @@ date:
   month: Setembro
   year: 2020
 output:
-  pdf_document: default
-  html_document: pagedown::thesis_paged
   word_document:
     reference_docx: ./templates/template_word.docx
+  html_document: pagedown::thesis_paged
+  pdf_document: default
 bibliography: ../citation/referencias.bib
 degree: Mestre em Ornitologia
 department: Biologia
