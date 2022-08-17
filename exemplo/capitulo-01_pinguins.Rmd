@@ -1,20 +1,18 @@
 ---
-title: 'Automatizar partes chatas do manuscrito para poder focar na escrita: um exercício
-  usando dados de pinguins'
+title: 'Sinalização visual em caranguejo chama-maré e sua relação com background e predação'
 author:
-- "Andrea Sánchez-Tapia ^*1*^, Sara R. Mortara^*1*^"
-- ^*1*^ ¡liibre! laboratório independente de informática da biodiversidade e reprodutibilidade
-  em ecologia
-date: "LatinR, 2020"
+- "Diogo J. A. Silva ^*1*^, Daniel M. A. Pessoa^*1*^"
+- ^*1*^ Laboratório de Ecologia Sensorial, UFRN.
+date: "Natal, 2022"
 output:
-  pdf_document: default
+  word_document:
+    reference_docx: ./templates/template_word3.docx
   html_document:
     df_print: paged
-  word_document:
-    reference_docx: ./templates/template_word2.docx
-csl: "../citation/journal-of-ecology.csl"
+  pdf_document: default
+csl: "../citation/apa.csl"
 always_allow_html: yes
-bibliography: ../citation/referencias.bib
+bibliography: ../citation/ref_caracterization.bib
 abstract: |
   **Resumo:** Valerá sim a pena continuar a ler o manuscrito. Escrever não é fácil e ninguém quer perder tempo inserindo tabelas e figuras em editores de texto convencionais. Por isso, o uso de ferramentas que permitem a automatização em arquivos de texto como latex e rmarkdown é essencial. A curva de aprendizado não é tão rápida quanto em um editor de texto convencional, mas acredite, valerá a pena. Para a redação não há outra saída. Você irá precisar de café (ou sua outra bebida favorita), uma boa pergunta embasada no contexto teórico da sua área de estudo, dados e um bons argumentos para discutir o que você encontrou. Mas esta não é uma oficina sobre redação científica. Por isso, o uso de ferramentas que permitem a automatização em arquivos de texto como latex e rmarkdown é essencial. A curva de aprendizado não é tão rápida quanto em um editor de texto convencional, mas acredite, valerá a pena. Para a redação não há outra saída.
 ---
@@ -36,7 +34,7 @@ Não faz sentido esse paragrafo não recuar igual aos outros, ta foda essa porra
 
 Para a redação não há outra saída. Você irá precisar de café (ou sua outra bebida favorita), uma boa pergunta embasada no contexto teórico da sua área de estudo, dados e um bons argumentos para discutir o que você encontrou. Mas esta não é uma oficina sobre redação científica.       
 
-Neste exercício, usaremos dados abertos coletados por @gorman_ecological_2014 disponíveis no pacote de R palmerpenguins [@allisonmhorst_allisonhorst_2020] para mostrar como inserir tabelas e figuras em um documento de rmarkdown.
+Neste exercício, usaremos dados abertos coletados por @dettoFiddlerCrabUca2009a disponíveis no pacote de R palmerpenguins [@barnardBlueStreakDynamic2012] para mostrar como inserir tabelas e figuras em um documento de rmarkdown.
     
 Os dados são referentes a medidas de `r nrow(dados)` indivíduos de três espécies de pinguins do gênero *Pygoscelis*. As espécies ocorrem em três ilhas do arquipélago Palmer na Antártica: `r paste(unique(dados$island), collapse = ", ")`. A espécie *P. adelie* é a única que ocorre nas três ilhas e co-ocorre com as demais espécies (Figura 1). 
 
